@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <Sdk Name="SharpGenTools.Sdk" Version="$(SharpGenVersion)" />
+
+  <PropertyGroup>
+    <TargetFrameworks>net7.0;net8.0</TargetFrameworks>
+    <Description>DirectX - Effects11 managed API for Direct3D11.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\..\External\Effects11\Bin\effects11.dll">
+      <Link>effects11.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <PackagePath>runtimes/win-x64/native/effects11.dll</PackagePath>
+      <Pack>true</Pack>
+    </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Using Include="System.Diagnostics.CodeAnalysis" />
+    <Using Include="System.Runtime.InteropServices" />
+    <Using Include="SharpGen.Runtime" />
+
+    <ProjectReference Include="..\Vortice.DXGI\Vortice.DXGI.csproj" />
+    <ProjectReference Include="..\Vortice.D3DCompiler\Vortice.D3DCompiler.csproj" />
+    <ProjectReference Include="..\Vortice.Direct3D11\Vortice.Direct3D11.csproj" />
+
+    <SharpGenMapping Include="Mappings.xml" />
+    <SharpGenExternalDocs Include="Documentation.xml" />    
+  </ItemGroup>
+</Project>
