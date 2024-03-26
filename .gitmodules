@@ -1,3 +1,3 @@
-[submodule "External/Effects11/fx11-orginal-microsoft"]
-	path = External/Effects11/fx11-orginal-microsoft
+[submodule "External/FX11"]
+	path = External/FX11
 	url = ../../microsoft/FX11.git

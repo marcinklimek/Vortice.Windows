@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config id="vortice-direct3d11-effects" xmlns="urn:SharpGen.Config">
+  <namespace>Vortice.Direct3D11.Effects</namespace>
+ 
+  <sdk name="StdLib" />
+  <sdk name="WindowsSdk" version="10.0.22621.0" />
+
+  <!-- Add Effects11 include directory-->
+  <include-dir>$(THIS_CONFIG_PATH)\..\..\External\FX11\Inc</include-dir>
+  
+  <include-prolog>
+    #define D3D11_NO_HELPERS
+  </include-prolog>
+  
+  <!-- D3D11 includes -->
+  <include file="d3dx11effect.h" attach="true" />
+  
+  <naming />
+
+  <!-- D3D11 extensions -->
+  <extension>
+
+    <create-cpp enum="D3DX11_EFFECT_VARIABLE_FLAGS" macro="D3DX11_EFFECT_VARIABLE_(.*)" />
+    <create class="Effects"/>
+  </extension>
+
+  <!-- D3D11 mapping -->
+  <mapping>
+    <!--
+    // *****************************************************************
+    // D3D11 Enumerations
+    // *****************************************************************
+    -->
+
+
+    <!--
+    // *****************************************************************
+    // D3D11 Struct
+    // *****************************************************************
+    -->
+    <map enum="D3DX11_EFFECT_VARIABLE_FLAGS" name="EffectVariableFlags" />
+    <map field="D3DX11_EFFECT_SHADER_DESC::SODecls" visibility="internal" type="void"/>
+    <!--<map field="D3DX11_EFFECT_SHADER_DESC::SODecls" visibility="internal" type="void" array="0"/>-->
+    
+    <!--
+    // *****************************************************************
+    // D3D11 Interfaces
+    // *****************************************************************
+    -->
+    <map param="ID3DX11EffectGroup::GetDesc::pDesc" attribute="out"/>
+    <map method="ID3DX11EffectUnorderedAccessViewVariable::.*" property="false"/>
+    <map param="ID3DX11EffectBlendVariable::GetBlendState::ppState" attribute="out"/>
+    <map param="ID3DX11EffectDepthStencilVariable::GetDepthStencilState::ppState" attribute="out"/>
+    <map param="ID3DX11EffectRasterizerVariable::GetRasterizerState::ppState" attribute="out"/>
+    
+
+
+    <map param="ID3DX11EffectDepthStencilViewVariable::GetDepthStencil::ppResource" attribute="out"/>
+    <map param="ID3DX11EffectUnorderedAccessViewVariable::GetUnorderedAccessView::ppResource" attribute="out"/>
+    <map method="ID3DX11EffectUnorderedAccessViewVariable::Set.*" name="Set"/>
+    <map param="ID3DX11EffectUnorderedAccessViewVariable::GetUnorderedAccessView::ppResource" return="true"/>
+    <map method="ID3DX11EffectUnorderedAccessViewVariable::SetUnorderedAccessViewArray" visibility="internal"/>
+    <map param="ID3DX11EffectUnorderedAccessViewVariable::SetUnorderedAccessViewArray::ppResources" attribute="in buffer"/>
+    <map method="ID3DX11EffectUnorderedAccessViewVariable::GetUnorderedAccessViewArray" visibility="internal"/>
+    <map param="ID3DX11EffectUnorderedAccessViewVariable::GetUnorderedAccessViewArray::ppResources" attribute="out buffer"/>
+
+    <!--
+    // *****************************************************************
+    // D3D11 Functions
+    // *****************************************************************
+    -->
+    <remove function="D3DX11CreateEffectFromMemory"/>
+
+    <!--
+    // *****************************************************************
+    // D3D11 Constants
+    // *****************************************************************
+    -->
+    <map function="D3D(.*)" name-tmp="$1" />
+    <map function="D3D[^1].*" dll='"Effects11.dll"' group="D3DX11Effects" />
+
+  </mapping>
+</config>
