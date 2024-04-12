@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Amer Koleci and Contributors.
 // Licensed under the MIT License (MIT). See LICENSE in the repository root for more information.
 
+using System.Runtime.InteropServices.Marshalling;
 using Vortice.Mathematics;
 using Vortice.DXGI;
 
@@ -13,7 +14,7 @@ namespace Vortice.WinUI;
 
 
 [Guid("e4cecd6c-f14b-4f46-83c3-8bbda27c6504")]
-public unsafe class ISurfaceImageSourceNative : ComObject
+public unsafe class ISurfaceImageSourceNative : SharpGen.Runtime.ComObject
 {
     public ISurfaceImageSourceNative(IntPtr nativePtr)
         : base(nativePtr)

@@ -1,21 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  
+
   <Sdk Name="SharpGenTools.Sdk" Version="$(SharpGenVersion)" />
 
   <PropertyGroup>
-    <TargetFrameworks>net7.0;net8.0</TargetFrameworks>
+    <TargetFrameworks>net8.0</TargetFrameworks>
     <Description>DirectX - Effects11 managed API for Direct3D11.</Description>
   </PropertyGroup>
 
+  <!-- Include Effects11.dll in the NuGet package under the runtimes folder -->
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)..\..\External\FX11\Bin\Desktop_2022_Win10\x64\Release\Effects11.dll">
-      <Link>effects11.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <PackagePath>runtimes/win-x64/native/effects11.dll</PackagePath>
+    <None Include="runtimes\win-x64\native\Effects11.dll">
       <Pack>true</Pack>
+      <PackagePath>runtimes\win-x64\native\</PackagePath>
     </None>
   </ItemGroup>
-  
+
   <ItemGroup>
     <Using Include="System.Diagnostics.CodeAnalysis" />
     <Using Include="System.Runtime.InteropServices" />

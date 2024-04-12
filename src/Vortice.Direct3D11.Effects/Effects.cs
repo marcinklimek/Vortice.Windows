@@ -26,7 +26,7 @@ namespace Vortice.Direct3D11.Effects;
 #pragma warning disable 1574
 
 
-partial class Effects
+public partial class Effects
 {
     /// <summary>	
     /// <p>Creates an effect from a binary effect or file.</p>	

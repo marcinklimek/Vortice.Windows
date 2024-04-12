@@ -111,6 +111,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vortice.Direct3D11.Effects"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Effects11", "External\FX11\Effects11_2022_Win10.vcxproj", "{DF460EAB-570D-4B50-9089-2E2FC801BF38}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FXCompiler", "src\FXCompiler\FXCompiler.csproj", "{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -790,6 +792,24 @@ Global
 		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|x64.Build.0 = Release|x64
 		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|x86.ActiveCfg = Release|Win32
 		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|x86.Build.0 = Release|Win32
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Debug|Any CPU.Build.0 = Debug|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Debug|x64.ActiveCfg = Debug|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Debug|x64.Build.0 = Debug|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Debug|x86.ActiveCfg = Debug|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Debug|x86.Build.0 = Debug|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Profile|Any CPU.ActiveCfg = Debug|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Profile|Any CPU.Build.0 = Debug|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Profile|x64.ActiveCfg = Debug|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Profile|x64.Build.0 = Debug|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Profile|x86.ActiveCfg = Debug|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Profile|x86.Build.0 = Debug|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Release|Any CPU.ActiveCfg = Release|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Release|Any CPU.Build.0 = Release|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Release|x64.ActiveCfg = Release|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Release|x64.Build.0 = Release|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Release|x86.ActiveCfg = Release|x64
+		{A8197898-EC67-4CA6-A430-A1CA28C5FB0E}.Release|x86.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -209,6 +209,7 @@
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ModuleDefinitionFile>Effects11.def</ModuleDefinitionFile>
     </Link>
     <Manifest>
       <EnableDPIAwareness>false</EnableDPIAwareness>
